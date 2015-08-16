@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Task Lister</title>
+    <meta name="description" content="Simple task lister">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="/js/app/task.js"></script>
+  </head>
+  <body ng-app="task-lister" ng-controller="taskController">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h3>Task Lister</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="panel panel-body" ng-repeat="task in tasks">
+            {{ task }}
+          </div>
+        </div>
+      </div>
+      <div class="sectionPadding"></div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <h3>Write new task</h3>
+          <textarea rows="12" ng-model="newTask"></textarea>
+          <input type="button" value="Create Task" ng-click="addTask(newTask)" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

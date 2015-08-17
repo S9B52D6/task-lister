@@ -10,6 +10,13 @@ angular.module('task-lister', [])
           $scope.taskText = "";
         });
     };
+
+    $scope.removeTask = function(task) {
+      $http.delete('/api/tasks/'+task._id)
+        .success(function() {
+          loadTasks($scope, $http);
+        });
+    };
   });
 
 function loadTasks($scope, $http)
@@ -18,7 +25,8 @@ function loadTasks($scope, $http)
   $http.get('/api/tasks')
     .success(function(data) {
       angular.forEach(data, function(value) {
-        this.push({text: value.text, timestamp: new Date(value.timestamp).toLocaleString()});
+        value.timestamp = new Date(value.timestamp).toLocaleString();
+        this.push(value);
       }, $scope.tasks);
     });
 }

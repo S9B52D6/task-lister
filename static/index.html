@@ -23,7 +23,9 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
           <div class="panel panel-body" ng-repeat="task in tasks">
-            {{ task }}
+            {{ task.text }}
+            <hr>
+            <span>{{ task.timestamp }}</span>
           </div>
         </div>
       </div>

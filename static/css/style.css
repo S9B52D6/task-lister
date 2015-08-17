@@ -1,9 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,500);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
 
 body
 {
   font-family: 'Roboto', sans-serif;
-  background-color: #7e9eac;
+  background-color: #9bb1bb;
 }
 
 h1, h2, h3, h4
@@ -15,21 +16,23 @@ h1, h2, h3, h4
 textarea
 {
   border-radius: 5px;
-  border: 1px solid rgba(#606060, 0.78);
-  box-shadow: .75px .75px .75px .75px rgba(54, 54, 54, 0.33);
+  /*border: 1px solid rgba(#606060, 0.00);*/
   width: 97%;
   display: block;
   margin: 10px auto;
+  padding: 5px;
   font-size: 110%;
   letter-spacing: 0.2px;
   resize: none;
 }
 
+textarea:focus {box-shadow: 1px 1px 1px 1px rgba(54, 54, 54, 0.45);}
+
 input[type=button]
 {
   border-radius: 3px;
   border: 20px;
-  background-color: #175d77;
+  background-color: #217b9d;
   color: #f0f0f0;
   width: 125px;
   height: 45px;
@@ -37,12 +40,31 @@ input[type=button]
   margin: 0 2%;
 }
 
+input[type=button]:hover
+{
+    background-color: #19627d;
+}
+
 .panel-body
 {
-  padding: 10px 5% 10px 5%;
+  padding: 10px 5px 10px 5px;
   margin: 10px;
   font-size: 120%;
-  text-align: center;
+  text-align: left;
+}
+
+.panel-body hr
+{
+    margin: 5px;
+    padding: 0;
+    width: 100%;
+
+}
+
+.panel-body hr + span
+{
+    font-size: 85%;
+    font-family: 'Inconsolata', ;
 }
 
 .sectionPadding

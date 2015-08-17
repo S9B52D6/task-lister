@@ -24,4 +24,39 @@ apiRouter.route('/tasks')
     });
   });
 
+apiRouter.route('/tasks/:id')
+  .get(function(req, res) {
+    taskModel.findById(req.params.id, function(err, task) {
+      if(err)
+        res.send(err)
+      else res.json(task);
+    })
+  })
+  .patch(function(req, res) {
+    taskModel.findById(req.params.id, function(err, task) {
+      if(err)
+        res.send(err);
+      else
+      {
+        if(req.body.text)
+          task.text = req.body.text;
+        if(req.body.timestamp)
+          task.timestamp = req.body.timestamp;
+
+        task.save(function(err) {
+          if(err)
+            res.send(err);
+          else res.json({success:true, message:"Task updated"});
+        });
+      }
+    })
+  })
+  .delete(function(req, res) {
+    taskModel.findByIdAndRemove(req.params.id, function(err) {
+      if(err)
+        res.send(err)
+      else res.json({success:true, message:"Task deleted"});
+    });
+  });
+
 module.exports = apiRouter;

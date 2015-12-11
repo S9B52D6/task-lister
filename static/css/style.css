@@ -13,6 +13,13 @@ h1, h2, h3, h4
   color: #f0f0f0;
 }
 
+a 
+{
+  color: #DCD08F;
+}
+
+a:hover {color: #DCD08F;}
+
 i {margin-right:10px;}
 
 textarea
@@ -85,3 +92,5 @@ input[type=button]:hover
 {
   margin-top: 50px;
 }
+
+.title {text-align: center;}

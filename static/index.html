@@ -18,6 +18,9 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <h3>Task Lister</h3>
+            <div class="title"> <!-- Don't Ask -->
+	      <a href="https://github.com/m-aneiro/task-lister" target="_blank">Github Repository</a>
+	    </div>
         </div>
       </div>
       <div class="row">
@@ -28,7 +31,6 @@
             <hr>
             <span>{{ task.timestamp }}</span>
             <i class="fa fa-times-circle" ng-click="removeTask(task)"></i>
-            <!-- <i class="fa fa-pencil" ng-click="editTask(task)"></i> -->
           </div>
         </div>
       </div>
@@ -37,7 +39,7 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
           <h3>Write new task</h3>
-          <textarea rows="12" ng-model="taskText"></textarea>
+          <textarea rows="3" ng-model="taskText" ng-enter="addTask(taskText)"></textarea>
           <input type="button" value="Create Task" ng-click="addTask(taskText)" />
         </div>
       </div>
